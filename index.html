@@ -86,7 +86,7 @@
           </div>
           <div class="col-md-6 mt-3 mt-md-0 mb-5">
             <div class="profile-img text-center">
-              <img src="img/profil.jpg" width="330" class="rounded-circle img-thumbnail border-primary border-4" alt="profile img" data-aos="zoom-in-down" data-aos-delay="700">
+              <img src="img/profil.jpg" width="320" class="rounded-circle img-thumbnail border-primary border-4" alt="profile img" data-aos="zoom-in-down" data-aos-delay="700">
             </div>
           </div>
         </div>
@@ -286,7 +286,14 @@
     </section>
     <!--Portfolio section end-->
 
-
+    <script type="text/javascript">
+      function nextfield(ID)
+      {
+        if (event.keyCode == 13)
+        document.getElementById(ID).focus();
+      } 
+    </script>
+    
     <section id="contact" class="contact py-5" data-aos="zoom-in-down" data-aos-delay="400">
       <div class="container py-6">
         <div class="row justify-content-center">
@@ -297,42 +304,32 @@
             </div>
           </div>
         </div>
-        <div class="row justify-content-center">  
-          <div class="col-6">
-            <p>Name</p>
-            <div class="row justify-content-center">
-              <div class="col justify-content-center">
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="First name" name="firstname">
-                  <label for="floatingInput">First name</label>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-floating">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Last name" name="lastname">
-                  <label for="floatingPassword">Last name</label>
-                </div>
-              </div>       
-          </div>
-        </div>
-        <div class="row justify-content-center">  
-          <div class="col-6">
-            <p>Email address</p>
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="emailexample@gmail.com" name="email">
-                  <label for="floatingInput">youremail@example.com</label>
-                </div>   
-          </div>
-        </div>
-        <div class="row justify-content-center">  
-          <div class="col-6">
-            <p>A word or two to say? :)</p>
-              <textarea class="form-control" id="message" rows="3" placeholder="Your Message" name="message"></textarea>  
-             <a href="#home" target="_blank"><button type="submit" class="btn-submit btn-warning text-primary fw-bold mt-3">Send</button></a>
-          </div>
-        </div>
-    </section>
-
+        <form action="#home" method="get">
+                  <div class="row mb-3">
+                    <div class="col">
+                      <label>First Name</label>
+                      <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="firstname" required="required" onkeypress="nextfield('lastname')">
+                    </div>
+                    <div class="col">
+                      <label>Last Name</label>
+                      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="lastname" id="lastname" required="required" onkeypress="nextfield('email')">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Email</label> 
+                    <input type="email" class="form-control" placeholder="youremail@gmail.com" name="email" id="email" required="required" onkeypress="nextfield('message')">
+                  </div>
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">A word or two to say? :)</label>
+                    <textarea  class="form-control" placeholder="Your message" rows="5" name="message" id="message" required="required" onkeypress="nextfield('submit')"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <input type="submit" name="send" value="Send" id="submit">
+                  </div>
+        </form>      
+     </div>
+   </section>
+    
     <section id="socmed" class="socmed">
       <div class="container py-6">
         <div class="row justify-content-center">
